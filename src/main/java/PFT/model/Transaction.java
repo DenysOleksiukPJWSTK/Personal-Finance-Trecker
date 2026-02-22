@@ -50,6 +50,6 @@ public abstract class Transaction implements Cloneable {
     }
 
     @Override
-    public abstract Transaction clone() throws CloneNotSupportedException;
+    public abstract Transaction clone();
 
 }
