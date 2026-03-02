@@ -4,14 +4,13 @@ import java.time.LocalDate;
 
 public final class Expense extends Transaction {
 
-    public Expense(int id, double amount, LocalDate date, String description) {
-        super(id, amount, date, description);
+    public Expense(double amount, LocalDate date, String description) {
+        super(amount, date, description);
     }
 
     @Override
     public Transaction clone(){
         return new Expense(
-                this.getId(),
                 this.getAmount(),
                 this.getDate(),
                 this.getDescription()

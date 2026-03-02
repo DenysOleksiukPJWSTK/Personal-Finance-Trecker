@@ -4,14 +4,13 @@ import java.time.LocalDate;
 
 public final class Income extends Transaction {
 
-    public Income(int id,double amount,LocalDate date, String description) {
-        super(id, amount, date, description);
+    public Income(double amount,LocalDate date, String description) {
+        super(amount, date, description);
     }
 
     @Override
     public Transaction clone(){
         return new Income(
-                this.getId(),
                 this.getAmount(),
                 this.getDate(),
                 this.getDescription()
