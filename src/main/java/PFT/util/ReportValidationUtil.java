@@ -15,11 +15,6 @@ public final class ReportValidationUtil {
             logger.error("Transactions cannot be null");
             throw new ReportValidationException("Transactions cannot be null");
         }
-
-        if (transactions.length < 1){
-            logger.error("Transactions cannot be empty");
-            throw new ReportValidationException("Transactions cannot be empty");
-        }
     }
 
     public static void validate(double totalIncome,double totalExpense){

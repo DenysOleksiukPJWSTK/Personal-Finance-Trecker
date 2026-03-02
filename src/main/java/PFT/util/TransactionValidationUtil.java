@@ -11,13 +11,6 @@ public final class TransactionValidationUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(TransactionValidationUtil.class);
 
-    public static void validate(int id){
-        if (id < 0){
-            logger.error("Invalid transaction ID --> must be greater equals 0!");
-            throw new TransactionValidationException("Invalid Transaction ID");
-        }
-    }
-
     public static void validate(double amount){
         if (amount < 0){
             logger.error("Invalid transaction amount --> must be greater equals 0!");
