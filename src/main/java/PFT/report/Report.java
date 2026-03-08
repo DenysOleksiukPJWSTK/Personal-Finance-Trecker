@@ -12,7 +12,8 @@ public final class Report {
     public Report(Transaction[] transactions, double totalExpense, double totalIncome) {
         ReportValidationUtil.validate(transactions);
         ReportValidationUtil.validate(totalIncome,totalExpense);
-        this.transactions = transactions;
+        this.transactions = new Transaction[transactions.length];
+        System.arraycopy(transactions, 0, this.transactions, 0, transactions.length);
         this.totalExpense = totalExpense;
         this.totalIncome = totalIncome;
     }
@@ -20,7 +21,10 @@ public final class Report {
     public String generateReport(){
         StringBuilder sb = new StringBuilder();
         sb.append("---------------------------Report---------------------------\n");
-        for (Transaction transaction : transactions) sb.append(transaction).append("\n");
+        for (Transaction transaction : transactions){
+            if (transaction == null) continue;
+            sb.append(transaction).append("\n");
+        }
         sb.append("Total income: ").append(totalIncome).append("\n");
         sb.append("Total expense: ").append(totalExpense).append("\n");
         sb.append("-------------------------------------------------------\n");
